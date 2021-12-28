@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/28 14:29:19 by gveronic          #+#    #+#             */
+/*   Updated: 2021/12/28 14:35:23 by gveronic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int	len;
-	char tofind;
+	int		len;
+	char	tofind;
 
 	tofind = c;
 	len = ft_strlen(str) - 1;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/28 14:06:46 by gveronic          #+#    #+#             */
+/*   Updated: 2021/12/28 14:36:28 by gveronic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	number_size(int n)
@@ -51,7 +63,7 @@ static void	reverse_string(char *s)
 {
 	size_t		x;
 	size_t		y;
-	char	aux;
+	char		aux;
 
 	x = 0;
 	y = ft_strlen(s) - 1;

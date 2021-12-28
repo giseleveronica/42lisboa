@@ -1,23 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/28 14:08:46 by gveronic          #+#    #+#             */
+/*   Updated: 2021/12/28 14:17:05 by gveronic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static int			ft_isc(char str, char c)
+static int	verify_if_is_c(char str, char c)
 {
 	return (str == c);
 }
 
-static int		count_words(char *str, char c)
+static int	count_words(char *str, char c)
 {
 	int	count;
 
 	count = 0;
 	while (*str)
 	{
-		while (*str && ft_isc(*str, c))
+		while (*str && verify_if_is_c(*str, c))
 			str++;
-		if (*str && !ft_isc(*str, c))
+		if (*str && !verify_if_is_c(*str, c))
 		{
 			count++;
-			while (*str && !ft_isc(*str, c))
+			while (*str && !verify_if_is_c(*str, c))
 				str++;
 		}
 	}
@@ -26,15 +38,15 @@ static int		count_words(char *str, char c)
 
 static char	*malloc_word(char *str, char c)
 {
-	char *word;
-	int	x;
+	char	*word;
+	int		x;
 
 	x = 0;
-	while (str[x] && !ft_isc(str[x], c))
+	while (str[x] && !verify_if_is_c(str[x], c))
 		x++;
 	word = (char *)malloc(sizeof(char) * x + 1);
 	x = 0;
-	while (str[x] && !ft_isc(str[x], c))
+	while (str[x] && !verify_if_is_c(str[x], c))
 	{
 		word[x] = str[x];
 		x++;
@@ -45,18 +57,21 @@ static char	*malloc_word(char *str, char c)
 
 char	**ft_split(char const *str, char c)
 {
-	char **result = (char **)malloc(sizeof(char *) * (count_words((char *)str, c) + 1));
+	int		x;
+	char	**result;
 
-	int x = 0;
+	x = 0;
+	result = (char **)malloc(sizeof(char *)
+			* (count_words((char *)str, c) + 1));
 	while (*str)
 	{
-		while (*str && ft_isc(*str, c))
+		while (*str && verify_if_is_c(*str, c))
 			str++;
-		if (*str && !ft_isc(*str, c))
+		if (*str && !verify_if_is_c(*str, c))
 		{
 			result[x] = malloc_word((char *)str, c);
 			x++;
-			while (*str && !ft_isc(*str, c))
+			while (*str && !verify_if_is_c(*str, c))
 				str++;
 		}
 	}
