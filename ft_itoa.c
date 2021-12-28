@@ -6,7 +6,7 @@
 /*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:06:46 by gveronic          #+#    #+#             */
-/*   Updated: 2021/12/28 14:36:28 by gveronic         ###   ########.fr       */
+/*   Updated: 2021/12/28 16:20:29 by gveronic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*malloc_string(int n, int size)
 		string = malloc(sizeof(char) * (size + 1) + 1);
 	else
 		string = malloc(sizeof(char) * size + 1);
-	if (string == NULL)
+	if (!string)
 		return (NULL);
 	return (string);
 }
@@ -83,6 +83,8 @@ char	*ft_itoa(int n)
 
 	size = number_size(n);
 	string = malloc_string(n, size);
+	if (!string)
+		return (NULL);
 	create_string(string, n, size);
 	reverse_string(string);
 	return (string);

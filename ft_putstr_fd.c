@@ -6,7 +6,7 @@
 /*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:08:18 by gveronic          #+#    #+#             */
-/*   Updated: 2021/12/28 14:08:20 by gveronic         ###   ########.fr       */
+/*   Updated: 2021/12/28 16:14:03 by gveronic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	x;
 
+	if (!s)
+		return ;
 	x = 0;
 	while (s[x])
 		write(fd, &s[x++], 1);

@@ -6,7 +6,7 @@
 /*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:08:05 by gveronic          #+#    #+#             */
-/*   Updated: 2021/12/28 14:08:07 by gveronic         ###   ########.fr       */
+/*   Updated: 2021/12/28 16:14:31 by gveronic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	x;
 
+	if (!s)
+		return ;
 	x = 0;
 	while (s[x])
 		write(fd, &s[x++], 1);

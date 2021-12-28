@@ -6,7 +6,7 @@
 /*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:08:46 by gveronic          #+#    #+#             */
-/*   Updated: 2021/12/28 14:17:05 by gveronic         ###   ########.fr       */
+/*   Updated: 2021/12/28 16:10:45 by gveronic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,13 @@ char	**ft_split(char const *str, char c)
 	int		x;
 	char	**result;
 
+	if (!str)
+		return (NULL);
 	x = 0;
 	result = (char **)malloc(sizeof(char *)
 			* (count_words((char *)str, c) + 1));
+	if (!result)
+		return (NULL);
 	while (*str)
 	{
 		while (*str && verify_if_is_c(*str, c))

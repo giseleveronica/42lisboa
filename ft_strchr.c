@@ -6,7 +6,7 @@
 /*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:25:16 by gveronic          #+#    #+#             */
-/*   Updated: 2021/12/28 14:25:23 by gveronic         ###   ########.fr       */
+/*   Updated: 2021/12/28 16:31:17 by gveronic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *str, int c)
 {
-	char	tofind;
+	unsigned char	tofind;
 
 	tofind = c;
 	while (*str)

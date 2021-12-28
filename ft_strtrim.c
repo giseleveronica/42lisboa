@@ -6,7 +6,7 @@
 /*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:29:31 by gveronic          #+#    #+#             */
-/*   Updated: 2021/12/28 14:29:32 by gveronic         ###   ########.fr       */
+/*   Updated: 2021/12/28 16:11:54 by gveronic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*string;
 
+	if (!s1)
+		return (NULL);
 	x = 0;
 	begin = 0;
 	end = ft_strlen(s1) - 1;

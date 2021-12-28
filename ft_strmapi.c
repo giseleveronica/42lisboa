@@ -6,7 +6,7 @@
 /*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:28:50 by gveronic          #+#    #+#             */
-/*   Updated: 2021/12/28 14:28:51 by gveronic         ###   ########.fr       */
+/*   Updated: 2021/12/28 16:04:36 by gveronic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	index;
 	char			*string;
 
+	if (!s)
+		return (NULL);
 	index = 0;
 	string = malloc(sizeof(char) * ft_strlen(s) + 1);
 	if (!string || !s || !f)

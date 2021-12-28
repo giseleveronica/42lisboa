@@ -6,7 +6,7 @@
 /*   By: gveronic <gveronic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 14:29:38 by gveronic          #+#    #+#             */
-/*   Updated: 2021/12/28 14:29:39 by gveronic         ###   ########.fr       */
+/*   Updated: 2021/12/28 16:00:37 by gveronic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	else
 		size_substring = len;
 	substring = malloc(sizeof(char) * size_substring + 1);
+	if (!substring)
+		return (NULL);
 	while (x < size_substring)
 	{
 		substring[x] = s[start];
